@@ -29,3 +29,12 @@
 
   3. Parallel Scavenge和Parallel Old，实现多线程的高吞吐量垃圾回收机制
   
+  Note:
+  
+    Non-Heap本质上也是堆，只是不归GC管理.
+    
+    堆也叫GC堆，存放对象实例以及数组。
+    
+    metaspace以前叫持久代（方法区，永久代，permanent generation），存储JVM加载的类信息,常量，静态变量，是各个线程共享的内存区域。
+    
+    常量池是方法去的一部分，主要内容来自JVM对class的加载。
