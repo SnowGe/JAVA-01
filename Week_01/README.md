@@ -29,6 +29,12 @@
 
   3. Parallel Scavenge和Parallel Old，实现多线程的高吞吐量垃圾回收机制
   
+  JVM调优浅谈：
+  
+  1. GC打日志：java -Xloggc:gc.demo.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps GCLogAnalysis
+  
+  2. 堆内存小了不好，大了也不好？why->
+  
   Note:
   
     Non-Heap本质上也是堆，只是不归GC管理.
