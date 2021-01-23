@@ -81,7 +81,7 @@ G1 GC六个阶段：
 
 阶段 6: 转移暂停：混合模式(Evacuation Pause (mixed))
 
-![GC 对比](https://github.com/SnowGe/JAVA-01/blob/main/Week_02/GC%E5%AF%B9%E6%AF%94.jpg)
+![图片](https://uploader.shimo.im/f/Ri30EqSfJeUg4Zmk.html!thumbnail?download=1&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbHQiOiJleHBvcnQiLCJ1c2VySWQiOjAsImV4cCI6MTYxOTI5MTA5Nn0.UDDj4sHwqrsE-gIYmAAgXaUWTTPamzACNAjfpZZLgtg&fileGuid=2HMSJNbJYdo18V3r)
 
 常用GC组合
 
@@ -92,18 +92,21 @@ G1 GC六个阶段：
 选择正确的 GC 算法，唯一可行的方式就是去尝试，一般性的指导原则：
 
 1. 如果系统考虑吞吐优先，CPU 资源都用来最大程度处理业务，用 Parallel GC；
-1. 如果系统考虑低延迟有限，每次 GC 时间尽量短，用 CMS GC；
-1. 如果系统内存堆较大，同时希望整体来看平均 GC 时间可控，使用 G1 GC。
+2. 如果系统考虑低延迟有限，每次 GC 时间尽量短，用 CMS GC；
+3. 如果系统内存堆较大，同时希望整体来看平均 GC 时间可控，使用 G1 GC。
 
 对于内存大小的考量：
 
 1. 一般 4G 以上，算是比较大，用 G1 的性价比较高。
-1. 一般超过 8G，比如 16G-64G 内存，非常推荐使用 G1 GC。
+2. 一般超过 8G，比如 16G-64G 内存，非常推荐使用 G1 GC。
 
 JDK8 默认GC是并行GC
 
 JDK9-15默认是G1GC
 
+问：标记-复制方法在yong区使用，相比标记-整理优点？
+
+标记和复制可以同时进行。缺点则是需要一个额外的内存空间，来放所有的存活对象。
 
 
 
