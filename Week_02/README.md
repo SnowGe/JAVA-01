@@ -81,7 +81,7 @@ G1 GC六个阶段：
 
 阶段 6: 转移暂停：混合模式(Evacuation Pause (mixed))
 
-![Image text][https://github.com/SnowGe/JAVA-01/blob/main/Week_02/GC%E5%AF%B9%E6%AF%94.jpg](https://github.com/SnowGe/JAVA-01/blob/main/Week_02/GC%E5%AF%B9%E6%AF%94.jpg)
+![GC 对比].https://github.com/SnowGe/JAVA-01/blob/main/Week_01/JVM%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84-%E6%A0%88.png
 
 常用GC组合
 
