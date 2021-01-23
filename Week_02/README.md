@@ -8,7 +8,7 @@
 
 CPU利用率高，暂停时间长，适合单核CPU,几百MB堆内存的JVM。
 
-2. **并行GC(Parallel GC)**-------吞吐量是最好的。
+1. **并行GC(Parallel GC)**-------吞吐量是最好的。
 
 -XX:UseParallelGC    年轻代标记-复制算法； 老年代标记-清除-整理算法。
 
@@ -20,7 +20,7 @@ CPU利用率高，暂停时间长，适合单核CPU,几百MB堆内存的JVM。
 
 非GC期间，没有GC线程在运行。
 
-3. **并发GC(CMS GC)**--------一般处理老年代，低延迟。
+1. **并发GC(CMS GC)**--------一般处理老年代，低延迟。
 
 -XX:UseConcMarkSweepGC    年轻代采用并行STW方式的mark-copy(标记-复制)算法-       ParaNew,老年代使用并发mark-sweep(标记-清除)算法。
 
@@ -32,13 +32,13 @@ CMS GC设计的目标是避免在老年代垃圾收集时出现长时间的卡�
 
 缺点：其中最大的问题就是老年代内存碎片问题（因为 不压缩），在某些情况下GC会造成不可预测的暂停时间，特别是堆内存较大的情况下。
 
-4. **G1 GC(Garbage-First)-**-----垃圾优先，哪一块垃圾最多，就优先清理它。
+1. **G1 GC(Garbage-First)-**-----垃圾优先，哪一块垃圾最多，就优先清理它。
 
 设计目标：将STW停顿时间和分布变成预期并且可配置的；不在划分年轻代和老年代，而是划分多个(通常是2048个)可以存放对象的小块堆区域。
 
 -XX:UseG1GC   -XX:MaxGCPauseMillis=50->GC最大停顿时间50ms.
 
-5. **ZGC**
+1. **ZGC**
 
 特性： GC最大停顿时间不超过10ms.
 
@@ -48,7 +48,7 @@ CMS GC设计的目标是避免在老年代垃圾收集时出现长时间的卡�
 
 当前只支持Linux/X64位平台，预期JDK14后支持MacOS和Windows系统。
 
-6. **Shenandoah GC.**
+1. **Shenandoah GC.**
 
 More details, refer the pdf file.
 
@@ -81,7 +81,7 @@ G1 GC六个阶段：
 
 阶段 6: 转移暂停：混合模式(Evacuation Pause (mixed))
 
-![图片](https://uploader.shimo.im/f/Jt7UoYnS7ENrY5Fq.jpg!thumbnail?fileGuid=jhhDj6Ch9DChG8C9)
+![Image text][https://github.com/SnowGe/JAVA-01/blob/main/Week_02/GC%E5%AF%B9%E6%AF%94.jpg](https://github.com/SnowGe/JAVA-01/blob/main/Week_02/GC%E5%AF%B9%E6%AF%94.jpg)
 
 常用GC组合
 
@@ -92,21 +92,18 @@ G1 GC六个阶段：
 选择正确的 GC 算法，唯一可行的方式就是去尝试，一般性的指导原则：
 
 1. 如果系统考虑吞吐优先，CPU 资源都用来最大程度处理业务，用 Parallel GC；
-
-2. 如果系统考虑低延迟有限，每次 GC 时间尽量短，用 CMS GC；
-
-3. 如果系统内存堆较大，同时希望整体来看平均 GC 时间可控，使用 G1 GC。
+1. 如果系统考虑低延迟有限，每次 GC 时间尽量短，用 CMS GC；
+1. 如果系统内存堆较大，同时希望整体来看平均 GC 时间可控，使用 G1 GC。
 
 对于内存大小的考量：
 
 1. 一般 4G 以上，算是比较大，用 G1 的性价比较高。
-
-2. 一般超过 8G，比如 16G-64G 内存，非常推荐使用 G1 GC。
-
+1. 一般超过 8G，比如 16G-64G 内存，非常推荐使用 G1 GC。
 
 JDK8 默认GC是并行GC
 
 JDK9-15默认是G1GC
+
 
 
 
