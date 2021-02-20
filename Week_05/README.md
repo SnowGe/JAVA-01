@@ -6,7 +6,7 @@
 
 2. （必做）写代码实现 Spring Bean 的装配，方式越多越好（XML、Annotation 都可以）, 提交到 Github。
 
-   [地址](https://github.com/taoscode/JAVA-01/tree/main/Week_05/SpringDemo/src/main/java/io/github/vencent/homework)
+   [地址](https://github.com/SnowGe/JAVA-01/tree/main/Week_05/SpringDemo/src/main/java/io/github/vencent/homework)
 
 3. （选做）实现一个 Spring XML 自定义配置，配置一组 Bean，例如： Student/Klass/School。
 
@@ -32,7 +32,7 @@
 
 3. （必做）给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。
 
-   [地址](https://github.com/taoscode/JAVA-01/tree/main/Week_05/SpringBoot-Demo-Starter)
+   [地址](https://github.com/SnowGe/JAVA-01/tree/main/Week_05/schoolStart/src/main/java/com/lw/starter)
 
 4. （选做）总结 Hibernate 与 MyBatis 的各方面异同点。
 
@@ -46,7 +46,7 @@
 
    3）配置 Hikari 连接池，改进上述操作。提交代码到 Github。
 
-   [地址](https://github.com/taoscode/JAVA-01/tree/main/Week_05/SpringBoot-Demo/SpringBoot-demo/src/main/java/io/github/vencent/springbootdemo/service)
+   [地址](https://github.com/SnowGe/JAVA-01/tree/main/Week_05/SpringBoot-Demo/src/main/java/io/github/vencent/springbootdemo/service)
 
    附加题（可以后面上完数据库的课再考虑做）：
 
